@@ -11,6 +11,7 @@
         margin: 0;
         padding: 0;
     }
+
     #container {
         display: flex;
         flex-wrap: wrap;
@@ -32,7 +33,7 @@
         height: 200px;
         border-radius: 20px;
         margin: 20px;
-        background-color: {{ color|default("#9fc5f8", true) }};
+        background-color: "{{ color|default("#9fc5f8", true) }}";
     }
 </style>
 <body>

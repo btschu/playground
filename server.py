@@ -18,10 +18,6 @@ def play_num(boxNum):
 def play_color(boxNum, color):
     return render_template('play.html', color=color, boxNum=boxNum,)
 
-# @app.route('/play/<int:num>/')
-# def repeat(num):
-#     return render_template("play.html")
-
 @app.errorhandler(404)
 def pageNotFound(missing):
     return "Sorry! No response. Try again."
