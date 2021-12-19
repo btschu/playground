@@ -1,22 +1,26 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'Hello World!'
+    return render_template("index.html")
 
-@app.route('/dojo')
-def dojo():
-    return 'Dojo!'
+@app.route('/play')
+def play():
+    return render_template("play.html")
 
-@app.route('/say/<string:name>')
-def say(name):
-    return f"Hi {name}"
+@app.route('/play/<int:boxNum>')
+def play_num(boxNum):
+    return render_template('play.html', boxNum=boxNum)
 
-@app.route('/repeat/<int:num>/<string:name>')
-def repeat(num, name):
-    return f"{name * num}"
+@app.route('/play/<int:boxNum>/<color>')
+def play_color(boxNum, color):
+    return render_template('play.html', color=color, boxNum=boxNum,)
+
+# @app.route('/play/<int:num>/')
+# def repeat(num):
+#     return render_template("play.html")
 
 @app.errorhandler(404)
 def pageNotFound(missing):
