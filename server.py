@@ -21,3 +21,22 @@ def pageNotFound(missing):
 if __name__=="__main__":
     app.run(debug=True)
 
+# Second time through solution
+
+# from flask import Flask, render_template
+# app = Flask(__name__)
+
+# @app.route('/')
+# def index():
+#     return render_template("index.html", num = 3, color = "lightblue")
+
+# @app.route('/<int:num>')
+# def num_of_boxes(num):
+#     return render_template("index.html", num = num, color = "lightblue")
+
+# @app.route('/<int:num>/<string:color>')
+# def num_of_boxes_with_color(num, color):
+#     return render_template("index.html", num = num, color = color)
+
+# if __name__=="__main__":
+#     app.run(debug=True)
